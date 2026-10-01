@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie & Book Library</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Movie / Book Library</h1>
+        <p class="subtitle">Add, search and filter your favourite movies and books.</p>
+
+        <div class="form-box">
+            <h2>Add Item</h2>
+            <div class="form-row">
+                <input type="text" id="title" placeholder="Title">
+                <select id="type">
+                    <option value="Movie">Movie</option>
+                    <option value="Book">Book</option>
+                </select>
+                <input type="text" id="genre" placeholder="Genre">
+                <input type="number" id="rating" min="0" max="10" step="0.1" placeholder="Rating (0-10)">
+                <button onclick="addItem()">Add</button>
+            </div>
+            <p id="message"></p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" id="search" placeholder="Search by title..." oninput="showItems()">
+            <select id="filterType" onchange="showItems()">
+                <option value="All">All</option>
+                <option value="Movie">Movies</option>
+                <option value="Book">Books</option>
+            </select>
+            <select id="filterGenre" onchange="showItems()">
+                <option value="All">All Genres</option>
+            </select>
+        </div>
+
+        <div id="library" class="library"></div>
+        <div id="pagination" class="pagination"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
